@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino do Lui - Projeto 80kg</title>
+    <style>
+        body { font-family: sans-serif; background-color: #121212; color: white; text-align: center; padding: 20px; }
+        .card { background: #1e1e1e; border-radius: 15px; padding: 20px; margin: 10px auto; max-width: 400px; border: 1px solid #333; }
+        h2 { color: #00ff88; }
+        .dia { font-weight: bold; color: #aaa; text-transform: uppercase; font-size: 0.9em; }
+        ul { list-style: none; padding: 0; text-align: left; }
+        li { padding: 8px 0; border-bottom: 1px solid #333; }
+        .meta { color: #ffcc00; font-size: 1.2em; margin-top: 20px; }
+        .agua { background: #0077ff; color: white; padding: 10px; border-radius: 10px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 Projeto 80kg</h1>
+    <p class="meta">Peso Atual: 49kg | <b>Meta: 80kg</b></p>
+
+    <div id="treino-hoje"></div>
+
+    <script>
+        const treinos = [
+            { dia: "Domingo", titulo: "Descanso Total", lista: ["Dormir bem", "Comer muito", "Preparar o shake de amanhã"] },
+            { dia: "Segunda", titulo: "Empurrar (Push)", lista: ["Peito (Supino)", "Tríceps (Pulley)", "Ombros (Desenvolvimento)", "Trapézio"] },
+            { dia: "Terça", titulo: "Puxar (Pull)", lista: ["Costas (Puxada)", "Bíceps (Rosca Direta)", "Trapézio (Encolhimento)", "Antebraço"] },
+            { dia: "Quarta", titulo: "Pernas (Legs)", lista: ["Agachamento", "Leg Press", "Extensora", "Panturrilha"] },
+            { dia: "Quinta", titulo: "Empurrar (Push)", lista: ["Peito (Voador)", "Tríceps (Corda)", "Ombros (Lateral)", "Trapézio"] },
+            { dia: "Sexta", titulo: "Puxar (Pull)", lista: ["Remada Baixa", "Bíceps (Martelo)", "Trapézio", "Lombar"] },
+            { dia: "Sábado", titulo: "Pernas (Legs)", lista: ["Foco em Panturrilha", "Flexora", "Passada", "Agachamento"] }
+        ];
+
+        const hoje = new Date().getDay();
+        const treinoDeHoje = treinos[hoje];
+
+        document.getElementById('treino-hoje').innerHTML = `
+            <div class="card">
+                <p class="dia">${treinoDeHoje.dia}</p>
+                <h2>${treinoDeHoje.titulo}</h2>
+                <ul>
+                    ${treinoDeHoje.lista.map(item => `<li>✅ ${item}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+    </script>
+
+    <div class="agua">💧 Beba 4L de Água hoje!</div>
+    <p style="margin-top: 20px; font-size: 0.8em; color: #666;">Foco no shake e na constância.</p>
+
+</body>
+</html>
+"""
